@@ -7,8 +7,9 @@ function getPeeps () {
   })
   .then(function(peeps) {
     for(var i = 0; i < peeps.length; i++){
-      // console.log(peeps[i].body)
-      document.getElementById("peeps").innerHTML = 'Peeps'
+      peep = document.createElement('div')
+      peep.innerHTML = peeps[i].body
+      document.getElementById("peeps").appendChild(peep)
     }
   })
   .catch(function(error) {
