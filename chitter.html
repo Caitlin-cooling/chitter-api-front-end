@@ -5,7 +5,28 @@
     <title>Chitter</title>
   </head>
   <body>
-    <h1>Welcome to Chitter</h1>
+    <div id="signUp">
+      <h1 >Welcome to Chitter</h1>
+      <h3>Create an account:</h3>
+      <p id='error'></p>
+      <form id="createUser">
+        <input type="text" id="new_handle", placeholder="Your Handle">
+        <input type="password" id="new_password", placeholder="Password">
+        <input type="submit" value="Sign Up!">
+      </form>
+      <script src="src/createUser.js"></script>
+    </div>
+    <div id="signIn">
+      <h3>Already have an account?</h3>
+      <p>Sign in:</p>
+      <form id="createSession">
+        <input type="text" id="handle", placeholder="Your Handle">
+        <input type="password" id="password", placeholder="Password">
+        <input type="submit" value="Sign in!">
+      </form>
+      <script src="src/createSession.js"></script>
+    </div>
+    <br>
     <div id="peeps">
       <button id="getPeeps">View Peeps</button>
       <script src="src/peepsRequest.js"></script>
