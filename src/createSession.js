@@ -17,7 +17,7 @@ function createSession(e) {
     return response.json();
   })
   .then(function(json){
-    if(!json.ok) {
+    if(json.errors !== undefined) {
       document.getElementById('error').innerHTML = 'Invalid username or password'
     }
   })
