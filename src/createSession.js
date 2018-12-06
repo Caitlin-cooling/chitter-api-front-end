@@ -5,6 +5,10 @@ function createSession(e) {
 
   var handle = document.getElementById('handle').value;
   var password = document.getElementById('password').value;
+  function setLocalStorage(json) {
+    localStorage.setItem('user_id', json.user_id)
+    localStorage.setItem('session_key', json.session_key)
+  }
 
   fetch('https://chitter-backend-api.herokuapp.com/sessions', {
     method: 'post',
@@ -19,6 +23,8 @@ function createSession(e) {
   .then(function(json){
     if(json.errors !== undefined) {
       document.getElementById('error').innerHTML = 'Invalid username or password'
+    } else {
+      setLocalStorage(json)
     }
   })
   .catch(function(error) {
