@@ -1,0 +1,31 @@
+# Chitter API Front End
+This is a single page front end Twitter clone that requests peeps from a backend API.
+
+### Getting set up
+1. Clone this project `git clone https://github.com/Caitlin-cooling/chitter-api-front-end`
+2. Change in to the project `cd chitter-api-front-end`
+
+### Using this app
+Run HTTP-server, then visit `localhost://8080/chitter.html`.
+A user can:
+- Sign up
+- Sign in
+- Once signed in, create a peep
+- View all peeps
+
+### Technologies used
+This app is written in plain JavaScript and uses a basic HTTP-server. Session information is stored in localStorage so that the information persists until deleted.
+
+JQuery to handle events.
+
+Cypress has been used as the testing framework.
+
+ESLint was used as a linter using the AirBNB style guide.
+
+### Running the tests
+Ensure that your server is running using `http-server` command in the terminal. Then run `./node_modules/.bin/cypress open` to open the Cyrpess console. Tests can be run individually or all at once.
+
+### Structure of this challenge
+
+
+### Given more time I would...
