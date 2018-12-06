@@ -1,27 +1,27 @@
-/* global document, localStorage, fetch */
+/* global document, localStorage, fetch, $ */
 
-function createPeep(e) {
-  e.preventDefault();
+$(document).ready(() => {
+  $('#createPeep').submit((e) => {
+    e.preventDefault();
 
-  const body = document.getElementById('body').value;
-  const userId = localStorage.getItem('user_id');
-  const sessionKey = localStorage.getItem('session_key');
+    const body = document.getElementById('body').value;
+    const userId = localStorage.getItem('user_id');
+    const sessionKey = localStorage.getItem('session_key');
 
-  fetch('https://chitter-backend-api.herokuapp.com/peeps', {
-    method: 'post',
-    headers: {
-      Authorization: `Token token=${sessionKey}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ peep: { user_id: userId, body } }),
-  })
-    .then(response => response.json())
-    .then(() => {
-      document.getElementById('confirmation').innerHTML = 'Peep created! Click the button below to check it out';
+    fetch('https://chitter-backend-api.herokuapp.com/peeps', {
+      method: 'post',
+      headers: {
+        Authorization: `Token token=${sessionKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ peep: { user_id: userId, body } }),
     })
-    .catch((error) => {
-      console.error('Error', error);
-    });
-}
-
-document.getElementById('createPeep').addEventListener('submit', createPeep);
+      .then(response => response.json())
+      .then(() => {
+        document.getElementById('confirmation').innerHTML = 'Peep created! Click the button below to check it out';
+      })
+      .catch((error) => {
+        console.error('Error', error);
+      });
+  });
+});
