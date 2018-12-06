@@ -1,0 +1,29 @@
+{
+
+  "name": "chitter-api-front-end",
+  "version": "1.0.0",
+  "description": "This is a single page front end Twitter clone that requests peeps from a backend API.",
+  "main": "index.js",
+  "dependencies": {
+    "cypress": "^3.1.3",
+    "http-server": "^0.11.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Caitlin-cooling/chitter-api-front-end.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Caitlin-cooling/chitter-api-front-end/issues"
+  },
+  "homepage": "https://github.com/Caitlin-cooling/chitter-api-front-end#readme"
+}

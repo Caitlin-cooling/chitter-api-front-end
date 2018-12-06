@@ -1,27 +1,27 @@
-document.getElementById("createPeep").addEventListener("submit", createPeep)
+/* global document, localStorage, fetch */
 
 function createPeep(e) {
   e.preventDefault();
 
-  var body = document.getElementById('body').value;
-  var user_id = localStorage.getItem('user_id')
-  var session_key = localStorage.getItem('session_key')
+  const body = document.getElementById('body').value;
+  const userId = localStorage.getItem('user_id');
+  const sessionKey = localStorage.getItem('session_key');
 
   fetch('https://chitter-backend-api.herokuapp.com/peeps', {
     method: 'post',
     headers: {
-      "Authorization": `Token token=${session_key}`,
-      "Content-Type": "application/json"
+      Authorization: `Token token=${sessionKey}`,
+      'Content-Type': 'application/json',
     },
-    body: JSON.stringify({peep: {user_id: user_id, body: body}})
+    body: JSON.stringify({ peep: { user_id: userId, body } }),
   })
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(json) {
-    document.getElementById('confirmation').innerHTML = 'Peep created! Click the button below to check it out'
-  })
-  .catch(function(error) {
-    console.error("Error", error)
-  });
-};
+    .then(response => response.json())
+    .then(() => {
+      document.getElementById('confirmation').innerHTML = 'Peep created! Click the button below to check it out';
+    })
+    .catch((error) => {
+      console.error('Error', error);
+    });
+}
+
+document.getElementById('createPeep').addEventListener('submit', createPeep);
