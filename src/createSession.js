@@ -10,6 +10,9 @@ $(document).ready(() => {
       localStorage.setItem('user_id', json.user_id);
       localStorage.setItem('session_key', json.session_key);
     }
+    function welcomeUser(json) {
+      document.getElementById('signUp').innerHTML = `Welcome!`;
+    }
 
     fetch('https://chitter-backend-api.herokuapp.com/sessions', {
       method: 'post',
@@ -23,6 +26,7 @@ $(document).ready(() => {
         if (json.errors !== undefined) {
           document.getElementById('error').innerHTML = 'Invalid username or password';
         } else {
+          welcomeUser(json)
           setLocalStorage(json);
         }
       })
