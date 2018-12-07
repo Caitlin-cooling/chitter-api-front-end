@@ -29,3 +29,6 @@ Ensure that your server is running using `http-server` command in the terminal. 
 
 
 ### Given more time I would...
+- Redo the program using TDD
+- Implement update, delete and view single peeps
+- Implement likes and comments
